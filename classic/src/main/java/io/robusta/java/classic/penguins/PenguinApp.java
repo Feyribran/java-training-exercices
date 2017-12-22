@@ -10,12 +10,22 @@ public class PenguinApp {
 
 
     Penguin createSimplePenguin(){
-        return null;
+    	String name = "";
+		Penguin penguin = new Penguin(name);
+		return penguin;
     }
 
 
     List<Penguin> getPenguins(Penguin ... penguins){
-        return null;
+        List<Penguin> penguins = new List<>();
+        
+        int index = 0;
+        while (index < penguins.size()){
+        	penguins.
+        	index++;
+        }
+    	
+    	return null;
     }
 
     Penguin getPenguinByName(Penguin[] pingouins, String name){

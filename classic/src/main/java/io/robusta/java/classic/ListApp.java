@@ -9,18 +9,42 @@ import java.util.List;
 public class ListApp {
 
     List<Integer> buildList(int a, int b, int c){
-        return null;
+        List<Integer> integer = new ArrayList<>(3);
+        integer.add(a);
+        integer.add(b);
+        integer.add(c);
+    	return integer;
     }
 
 
     ArrayList<Integer> buildList(int... numbers){
-        return null;
+    	ArrayList<Integer> result = new ArrayList<>();
+        
+        for (int index : numbers){
+    		result.add(index);
+    	}
+
+    	return result;
     }
 
 
     boolean equality(List<Integer> list1, List<Integer> list2){
-
-        return false;
+    	
+    	//list1 = new ArrayList<>();
+    	//list2 = new ArrayList<>();
+    	boolean result = true;
+    	
+    	int index = 0;
+    	
+    	while (result == true && index < list1.size()){
+    		if (list1.get(index) == list2.get(index)){
+    			result = true;
+    			index++;
+        	} else {
+        		result = false;
+        	}
+    	}
+    	return result;
     }
 
     String asString (List<Integer> numbers){
