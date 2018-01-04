@@ -33,7 +33,16 @@ public class PeopleCollection extends ArrayList<People>implements IPeopleCollect
 		 same birthday
 		  */
 		
-		return false;
+		boolean result = false;
+		
+		for (int current = 0; current < this.size() - 1; current++){
+			for (int current2 = current + 1; current2 <this.size(); current2 ++){
+				if (this.get(current).birthday == this.get(current2).birthday){
+		    		result = true;
+		    	}
+			}
+		}
+		return result;
 	}
 
 }

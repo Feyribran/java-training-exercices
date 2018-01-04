@@ -23,28 +23,55 @@ public class Generation implements IGeneration{
 
     @Override
     public PeopleCollection createRandom(int size) {
-        return null;
+    	
+    	PeopleCollection result = new PeopleCollection(size);
+    	
+    	return result;
     }
 
     @Override
     public List<PeopleCollection> createAllRandom(int n, int size) {
         // call n times createRandom(size)
-        return null;
+        List<PeopleCollection> resultList = new ArrayList<>();
+    	
+        for (int current = 0; current < n; current++){
+    		PeopleCollection resultPeople = new PeopleCollection(size);
+    		resultList.add(resultPeople);
+    	}
+    	
+    	return resultList;
     }
 
     @Override
     public List<PeopleCollection> getPeopleCollections() {
-        return null;
+    	return this.collections;
     }
 
     @Override
     public int getNumberOfCollectionsThatHasTwoPeopleWithSameBirthday() {
-        return 0;
+        
+    	int result = 0;
+    	
+    	for (int current = 0; current < this.getPeopleCollections().size(); current++){
+    		if (this.getPeopleCollections().get(current).hasSame()){
+    		result++;
+    		}
+    	}	
+    	return result;
     }
 
     @Override
     public boolean isLessThan50() {
-        return false;
+        
+    	boolean result = false;
+    	
+    	for (int current = 0; current < this.getPeopleCollections().size(); current++){
+    		if (this.getPeopleCollections().get(current).size() < 50){
+    			result = true;
+    		}
+    	}	
+    	
+    	return result;
     }
 
 
