@@ -14,17 +14,27 @@ public class FoodApp {
 
 
     void reset(){
-
+    	this.money = 0;
+    	this.foodStock = 1000;
     }
 
     int deliver(int food){
-
-        return 0;
+    	int resultPrice = food*2;
+    	
+    	this.money = this.money + resultPrice - this.TRAVEL_COST;
+    	this.foodStock = this.foodStock - food;
+        
+    	return resultPrice;
     }
 
     int deliverAll(int count, int food){
 
-        return 0;
+    	int resultPrice = food*2*count;
+    	
+    	this.money = this.money + resultPrice - (count*this.TRAVEL_COST);
+    	this.foodStock = this.foodStock - (count*food);
+    	
+        return resultPrice;
     }
 
 

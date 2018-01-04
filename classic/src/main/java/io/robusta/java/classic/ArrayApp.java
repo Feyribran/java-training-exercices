@@ -9,7 +9,7 @@ public class ArrayApp {
 
     String[] buildEmptyArray(int size){
         String result[] = new String [size];
-    	return result;
+        return result;
     }
 
     int[] buildArray(int a, int b, int c){
@@ -23,12 +23,29 @@ public class ArrayApp {
 
 
     boolean equality(int[] array1, int[] array2){
-    	//boolean result;
-        if (array1[0] == array2[0] && array1[1] == array2[1] && array1[2] == array2[2]){
+    	//boolean result = true;
+    	int index = 0;
+    	
+    	if(array1.length != array2.length){
+    		return false;
+    	}
+    	
+    	while(index < array1.length){
+    		if (array1[index] != array2[index]){
+    			return false;
+    		} else {
+    			index++;
+    		}
+    	}
+    	
+    	
+       /* if (array1[0] == array2[0] && array1[1] == array2[1] && array1[2] == array2[2]){
         	return true;
         } else {
-    	return false;
-        }
+        	return false;
+        }*/
+    	
+    	return true;
     }
 
     String asString (int [] numbers){

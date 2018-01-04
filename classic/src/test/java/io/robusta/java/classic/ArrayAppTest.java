@@ -20,6 +20,10 @@ public class ArrayAppTest {
         assertTrue(array[0] == null);
         assertTrue(array[1] == null);
         assertTrue(array[2] == null);
+        
+        array = app.buildEmptyArray(4);
+        assertTrue(array.length == 4);
+
     }
 
     @Test
@@ -47,7 +51,8 @@ public class ArrayAppTest {
 
         // code should not break
         assertFalse(app.equality(a1,a4));
-
+        assertFalse(app.equality(a3,a4));
+        
     }
 
     @Test
